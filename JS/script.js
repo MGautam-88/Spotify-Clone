@@ -145,8 +145,8 @@ async function displayAlbums() {
                                 <path d="M8 5v14l11-7z" />
                             </svg>
                         </div>
-                        // <img src="songs/${folder}/cover.jpg" alt="${response.Title}">
-                        <img src="songs/Diljit/cover.jpg" alt="Test Image">
+                        
+                        <img src="/songs/Diljit/cover.jpg" alt="Test Image">
 
                         <h3>${response.Title}</h3>
                         <p>${response.Description}</p>
