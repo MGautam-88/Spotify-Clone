@@ -56,7 +56,8 @@ async function getSongs(folder, isDefault = false) {
 
     // If this is the default playlist, set the first song as the default song
     if (isDefault && songs.length > 0) {
-        currentSong.src = `http://127.0.0.1:5500/${currFolder}/` + encodeURIComponent(songs[0].fullName);
+        // currentSong.src = `http://127.0.0.1:5500/${currFolder}/` + encodeURIComponent(songs[0].fullName);
+        currentSong.src = `/${currFolder}/` + encodeURIComponent(songs[0].fullName);
         document.querySelector(".songinfo").innerHTML = songs[0].fullName; // Display the default song name
     }
 
@@ -118,7 +119,7 @@ const playMusic = (track) => {
 };
 
 async function displayAlbums() {
-    let a = await fetch(`http://127.0.0.1:5500/songs/`)
+    let a = await fetch(`/songs/`)
     let response = await a.text();
     let div = document.createElement("div");
     div.innerHTML = response;
@@ -134,7 +135,7 @@ async function displayAlbums() {
         if (e.href.includes("/songs/") && !e.href.includes(".htaccess")) {
             let folder = (e.href.split("/").slice(-1)[0]);
             //Get the metadata of the folder
-            let a = await fetch(`http://127.0.0.1:5500/songs/${folder}/info.json`); //fetching the json file
+            let a = await fetch(`/songs/${folder}/info.json`); //fetching the json file
             let response = await a.json();
             // console.log(response);
             cardContainer.innerHTML = cardContainer.innerHTML + `<div data-folder="${folder}" class="card">
