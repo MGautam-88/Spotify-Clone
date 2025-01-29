@@ -146,7 +146,7 @@ async function displayAlbums() {
                             </svg>
                         </div>
                         
-                        <img src="/songs/Diljit/cover.jpg" alt="Test Image">
+                        <img src="/songs/${folder}/cover.jpg" alt="${response.Title}">
 
                         <h3>${response.Title}</h3>
                         <p>${response.Description}</p>
